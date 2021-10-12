@@ -9,7 +9,7 @@ Finally, we have to feed these recognised numbers to a API which can give us the
 
 ### Model Creation:
 
-Image --> HaarCascade [indian_license_plate](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/indian_license_plate.xml) --> Extracted Plate --> Character Segmentation --> [DataSet of characters of Indian License Plate](https://github.com/AnonMrNone/indian_licenseplate_recognition/tree/master/data/data) --> CNN Model Training --> model.predict(character segmented) --> Extracted plate number
+Image --> HaarCascade [indian_license_plate](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/indian_license_plate.xml) --> Extracted Plate --> Character Segmentation --> [DataSet of characters of Indian License Plate](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/tree/main/data/data) --> CNN Model Training --> model.predict(character segmented) --> Extracted plate number
 
 Here, HaarCascade will only detect the number plate of size and shape related to car's number plate.
 
@@ -38,7 +38,7 @@ Contours can be simply explained as a curve joining all the continuous points (a
 
 Read more at: https://docs.opencv.org/4.5.2/d4/d73/tutorial_py_contours_begin.html
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/What%20are%20contours.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/contour.jpg)
 
 ### Segment Characters:
 
@@ -52,8 +52,8 @@ In our case we have used BINARY and OTSU together. BINARY will create an perfect
 
 Read more at: https://docs.opencv.org/4.5.2/d7/d4d/tutorial_py_thresholding.html
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/Binary.png)
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/otsu.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/Binary.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/otsu.png)
 
 #### What is erode and dilate?
 
@@ -70,13 +70,13 @@ Erode and dilate are most basic morphological operations, morphological operatio
 This operations consists of convolving an image A with some kernel B, which can have any shape or size, usually a square or circle.
 Doing this operation the brighter portion of the image grows.
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/dilate.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/dilate.png)
 
 #### Erode:
 
 This is exactly opposite of Dilation, it computes a local minimum over the area of given kernel.
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/erode.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/erode.png)
 
 Read more at: https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html
 
@@ -84,9 +84,9 @@ Read more at: https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.htm
 
 It’s just a metrics using which we can measure our model’s accuracy. So, what’s problem with accuracy metrics? Well the answer is very simple, let’s say in our data set, values/records are such that, it will favour positive side more rather than negative. In layman’s term, we might have 80% data which is in favour of our prediction and only 20% which is against, so obviously our model will be biased to one. In these cases, we might get more false positive as well as false negative. Overall we need to avoid Type 1 error more than Type 2. To do so, we have F1 Score. F1 Score is the harmonic mean of precision and recall.
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/precision_recall.png)
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/f1score.png)
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/f1beta.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/precision_recall.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/f1score.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/f1beta.png)
 
 Read more at: https://towardsdatascience.com/f-beta-score-in-keras-part-i-86ad190a252f
 
@@ -97,18 +97,18 @@ Note that the Dropout layer only applies when training is set to True such tha
 In simple words, The Dropout layer is a mask that nullifies the contribution of some neurons towards the next layer and leaves unmodified all others. We can apply a Dropout layer to the input vector, in which case it nullifies some of its features; but we can also apply it to a hidden layer, in which case it nullifies some hidden neurons.
 Dropout layers are important in training CNNs because they prevent overfitting on the training data. If they aren’t present, the first batch of training samples influences the learning in a disproportionately high manner. This, in turn, would prevent the learning of features that appear only in later samples or batches.
 
-![alt text](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/readme_images/droupout.png)
+![alt text](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/readme_images/droupout.png)
 
 ## Code according to the steps:
 
-Model Training: [code](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/license_recognition.ipynb)
+Model Training: [code](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/license_recognition.ipynb)
 
-Model Testing: [code](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/testing_of_model.ipynb)
+Model Testing: [code](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/testing_of_model.ipynb)
 
-Final video stream test: [code](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/testing_of_model_video_live_stream.ipynb)
+Final video stream test: [code](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/testing_of_model_video_live_stream.ipynb)
 
-Final WebApp: [code](https://github.com/AnonMrNone/indian_licenseplate_recognition/tree/master/license-webapp)
+Final WebApp: [code](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/tree/main/license-webapp)
 
 ## Demo Video:
 
-[Video Link](https://github.com/AnonMrNone/indian_licenseplate_recognition/blob/master/license-webapp/Demo-Video.mp4)
+[Video Link](https://github.com/tiru-patel/Automatic-Car-Parking-Slot-Booking-System/blob/main/license-webapp/Demo-Video.mp4)
